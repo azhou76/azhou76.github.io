@@ -1,38 +1,274 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My cool DATA 1500 project</title>
+    <title>The Injury Problem Tearing Through the NFL</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap"
       rel="stylesheet"
     />
     <script src="https://d3js.org/d3.v4.min.js"></script>
   </head>
   <body>
-    <h1>My cool project for DATA 1500</h1>
-    <p class="byline">By: Alex Zhou</p>
-    <div class="divider"></div>
+    <div class="background-image">
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h1>
+          The Injury Problem
+          <span style="font-style: italic">Tearing</span> Through the NFL
+        </h1>
+        <p class="byline">Alex Zhou</p>
+      </div>
+    </div>
+    <div class="side-container">
+      <img src="images/chart1.png" />
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        "
+      >
+        <p class="side-container-text">
+          The National Football League (NFL) has grown to be the United States'
+          most popular sport for the past 53 years, with
+          <a
+            href="https://news.gallup.com/poll/610046/football-retains-dominant-position-favorite-sport.aspx"
+            >41% of U.S. adults</a
+          >
+          ranking it as their favorite sport in 2024. The Super Bowl alone
+          garners over
+          <a
+            href="https://www.roadtrips.com/blog/the-most-watched-sporting-events-in-the-world/#:~:text=Super%20Bowl%20%E2%80%93%20115.1%20Million%20Viewers,of%20Rugby%2D%2017%20Million%20Viewers"
+            >six times</a
+          >
+          the number of views as the NBA Finals (115.1 million vs 17.8 million).
+        </p>
+        <p class="side-container-text">
+          Despite football's overwhelming popularity in the U.S., it does not
+          even rank in the
+          <a
+            href="https://www.aspeninstitute.org/wp-content/uploads/2023/02/TeamSnap-Project-Play-REPORT-v2.pdf"
+            >top 3 most popular youth sports</a
+          >, largely due to its reputation for violence and injury. To reduce
+          contact-related injuries, the NFL has assembled some of the world's
+          best medical teams and has experienced numerous advances in helmet
+          technology and safety measures over the past few years.
+        </p>
+        <p class="side-container-text">
+          However, an equally devastating set of injuries occur without
+          player-to-player contact. These
+          <span class="bold-text">non-contact</span>
+          injuries impact ligaments and bones in players' lower-bodies and are
+          often a result of sharp pivots on the playing surface, with recovery
+          times spanning from a few days to over a year.
+        </p>
+      </div>
+    </div>
+
+    <div class="stars-image">
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h1>The Stars</h1>
+      </div>
+    </div>
     <p>
-      I'm hosted with GitHub Pages. Lorem ipsum dolor sit amet, consectetur
-      adipisicing elit. Totam, nesciunt, deserunt nihil natus nam temporibus
-      fugiat cupiditate commodi illo, maxime omnis eveniet corrupti id
-      aspernatur. Quos pariatur fuga provident repudiandae.
+      <span style="font-weight: bold; color: #f86926">A.J. Green</span> (left),
+      <span style="font-weight: bold; color: #3150ec">Odell Beckham Jr.</span>
+      (center), and
+      <span style="font-weight: bold; color: #869397">Dez Bryant</span> (right)
+      were among the NFL's premier wide receivers in the 2010s, collectively
+      earning 13 Pro Bowl selections and 5 All-Pro selections (the game's
+      highest award) between 2011-2017. They altogether amassed 22,877 receiving
+      yards and each finished among the
+      <a href="https://www.statmuse.com/nfl/ask/best-receivers-of-the-2010s"
+        >top 25</a
+      >
+      receiving yard totals during the decade. Despite their brilliance early in
+      their careers, these stars exemplify how non-contact injuries can severely
+      impact even the best in the NFL.
     </p>
-    <img src="images/rhode_island.png" />
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab cumque fugit
-      harum dignissimos ullam enim pariatur at tempore sapiente placeat?
-      Adipisci sapiente dolorum repudiandae eum illum repellendus delectus
-      possimus qui?
-    </p>
-    <img class="wider-img" src="images/casa_battlo.png" />
-    <h2>About this story</h2>
-    <p>Here's a <a href="https://www.brown.edu/">link</a>.</p>
+
     <div id="myTooltip">_</div>
     <div id="myChart"></div>
+    <p>
+      A.J. Green missed the entire 2019 season after suffering a
+      <span class="bold-text">pedal ankle sprain</span> in training camp prior
+      to the season's start, landing awkwardly on his left foot after going up
+      for a catch. Green later mentioned being upset with the condition of the
+      practice field the injury occurred on.
+    </p>
+    <p>
+      Odell Beckham Jr. tore his left knee's
+      <span class="bold-text">anterior cruciate ligament (ACL)</span>
+      while running after a defender who had intercepted a pass in a Week 7 game
+      during the 2020 season, missing the rest of the season and requiring
+      surgery.
+    </p>
+    <p>
+      Dez Bryant fractured the
+      <span class="bold-text">fifth metatarsal</span> in his right foot on a
+      hard plant in the first game of the 2015 NFL season, requiring surgery and
+      a screw to be placed in his foot.
+    </p>
+
+    <div class="money-image">
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h1>The Money</h1>
+      </div>
+    </div>
+    <p>
+      The NFL has blossomed into a multi-billion dollar industry, with minimum
+      player salaries starting at
+      <a href="https://www.spotrac.com/nfl/cba/minimum">$610,000</a> each year
+      and extending to
+      <a
+        href="https://www.nfl.com/photos/ranking-the-nfl-s-biggest-contracts-for-2025"
+        >$60 million</a
+      >
+      over just one season. However, non-contact injuries can spell major
+      trouble, not only for player performances, but also financially. Missing
+      games, retiring early, or failing to sign a large contract extension due
+      to injury can be devastating and result in a significant loss of money.
+    </p>
+    <p>
+      An <span class="bold-text">ACL injury</span>, such as the one suffered by
+      Odell Beckham Jr., are especially catastrophic as they almost always
+      necessitate surgery and a multi-month recovery process.
+    </p>
+    <img class="wider-img" src="images/chart3.png" />
+
+    <div class="field-image">
+      <div class="overlay"></div>
+      <div class="hero-text">
+        <h1>The Fix</h1>
+      </div>
+    </div>
+    <div class="side-container">
+      <p class="side-container-text">
+        There is, however, one potential fix that the NFL can make to lessen the
+        prevalence of these non-contact injuries.
+        <span style="font-weight: bold; color: #869397">Synthetic turf</span>
+        surfaces, often used for their lower maintenance costs, greater
+        durability, and ability to enable stadiums to host different events
+        (e.g., concerts), make up
+        <a
+          href="https://en.as.com/nfl/nfl-stadiums-with-real-grass-and-artificial-turf-full-list-of-field-surfaces-n-2/"
+          >14 of the 32 NFL teams'</a
+        >
+        home stadiums. The rest of the teams use
+        <span style="font-weight: bold; color: #89a97f">natural grass</span>
+        fields. When rolled out for games, synthetic turf can lead to uneven or
+        slippery surfaces that become amplified when players are sprinting and
+        pivoting at upwards of 23 miles per hour. These turf imperfections have
+        real consequences for the athletes who compete on them.
+      </p>
+      <img class="wider-img" src="images/chart4.png" />
+    </div>
+    <p>
+      By moving away from synthetic turf fields in favor of natural grass, the
+      NFL can tackle the growing problem of non-contact injuries.
+      <span class="bold-text">
+        The NFL should invest in natural grass fields as a committment to their
+        players: one almost as strong as the players' committment to the
+        game.</span
+      >
+    </p>
+    <h2>Inspiration and Sources</h2>
+    <p>
+      This data narrative was inspired by my own experiences playing football in
+      high school. Whenever I would tell people about my past playing
+      experiences, one of the first questions they would ask me would be about
+      how often high-impact injuries and concussions occurred during play. As
+      someone who never had high-impact injuries but did suffer two serious knee
+      injuries, I was interested in shedding light on these often-overlooked but
+      just as detrimental injuries.
+    </p>
+    <p>
+      This project was created as the final project for the DATA 1500 course at
+      Brown University under the instruction of Reuben Fischer-Baum. The
+      <a
+        href="https://www.kaggle.com/competitions/nfl-playing-surface-analytics/overview"
+        >dataset</a
+      >
+      used in the first and final visualizations comes from the NFL 1st and
+      Future, which is the NFL's annual Super Bowl competition aimed at
+      improving player health, safety, and performance. The 2020 analytics
+      competition, from which this dataset originates, specifically includes
+      three different CSVs with injury, play, and advanced analytics data of 250
+      NFL players over the course of two consecutive seasons. The second
+      visualization's yards/game and Pro Bowl selection data comes from Pro
+      Football Reference (<a
+        href="https://www.pro-football-reference.com/players/G/GreeA.00.htm"
+        >A.J. Green</a
+      >,
+      <a href="https://www.pro-football-reference.com/players/B/BeckOd00.htm"
+        >Odell Beckham Jr.</a
+      >,
+      <a href="https://www.pro-football-reference.com/players/B/BryaDe01.htm"
+        >Dez Bryant</a
+      >) and the injury data comes from Draft Sharks (<a
+        href="https://www.draftsharks.com/fantasy/injury-history/aj-green/4691"
+        >A.J. Green</a
+      >,
+      <a
+        href="https://www.draftsharks.com/fantasy/injury-history/odell-beckham-jr/6942"
+        >Odell Beckham Jr.</a
+      >,
+      <a
+        href="https://www.draftsharks.com/fantasy/injury-history/dez-bryant/3366"
+        >Dez Bryant</a
+      >). Finally, the third visualization's
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5010185/">data</a> comes
+      from Secrist et al.'s paper titled The Financial and Professional Impact
+      of Anterior Cruciate Ligament Injuries in National Football League
+      Athletes.
+    </p>
+    <p style="margin-bottom: 100px">
+      In terms of images used in this project, the background photos for
+      sections
+      <a href="https://www.giants.com/video/draft-day-odell-beckham-jr-14911436"
+        >"The Money"</a
+      >
+      and
+      <a
+        href="https://www.giants.com/news/film-study-philadelphia-eagles-doug-pederson-carson-wentz-fletcher-cox"
+        >"The Fix"</a
+      >
+      come from Giants.com, the background photo for the
+      <a href="https://www.ewingcole.com/portfolio_page/metlife-stadium/"
+        >opening title</a
+      >
+      comes from Ewing Cole, and the background photos for the section "The
+      Stars" come from CBS Sports (<a
+        href="https://www.cbssports.com/nfl/news/bengals-place-a-j-green-on-injured-reserve-ahead-of-season-finale-putting-an-end-to-a-puzzling-situation/"
+        >A.J. Green</a
+      >), North Jersey Record (<a
+        href="https://www.northjersey.com/picture-gallery/sports/nfl/giants/2019/03/13/odell-beckham-jr-through-years-giants/3146263002/"
+        >Odell Beckham Jr.</a
+      >), and Sky Sports (<a
+        href="https://www.skysports.com/nfl/news/12118/9914261/dez-bryant-signs-new-five-year-70m-deal-with-the-dallas-cowboys"
+        >Dez Bryant</a
+      >). The
+      <a
+        href="https://stock.adobe.com/images/male-body-icon-set-thin-line-style-vector-collection/444186589?prev_url=detail"
+        >leg</a
+      >
+      used in the first visualization was taken from Adobe Stock images, and the
+      headshots used in the second visualization's interactive components come
+      from Player Profiler (<a
+        href="https://www.playerprofiler.com/nfl/aj-green/"
+        >A.J. Green</a
+      >), IMDb (<a href="https://www.imdb.com/name/nm5073309/"
+        >Odell Beckham Jr.</a
+      >), and Pro Football Focus (<a
+        href="https://www.pff.com/nfl/players/dez-bryant/5549"
+        >Dez Bryant</a
+      >).
+    </p>
   </body>
   <script src="scripts/firstChart.js"></script>
 </html>
